@@ -1,34 +1,34 @@
 var formulario = document.querySelector("#form")
 
 formulario.onsubmit = function(e) {
+  e.preventDefault(); 
 
-  e.prevent();
-  
-  var n = formulario.elements[0]
-  var e = formulario.elements[1]
-  var na = formulario.elements[2]
+  var n = formulario.elements[0];
+  var edadInput = formulario.elements[1];
+  var na = formulario.elements[2];
 
-  var nombre = n.value
-  var edad = e.value
+  var nombre = n.value;
+  var edad = edadInput.value;
 
-  var i = na.selectedIndex
-  var nacionalidad = na.options[i].value
-  console.log(nombre, edad)
-  console.log(nacionalidad)
+  var i = na.selectedIndex;
+  var nacionalidad = na.options[i].value;
+
+  console.log(nombre, edad);
+  console.log(nacionalidad);
 
   if (nombre.length === 0) {
-    n.classList.add("error")
-  }
-  if (edad < 18 || edad > 120) {
-    e.classList.add("error")
+    n.classList.add("error");
   }
 
-if (nombre.length > 0 
-  && (edad > 18 
-    && edad < 120) ) {
-  agregarInvitado(nombre, edad, nacionalidad)
+  if (edad < 18 || edad > 120) {
+    edadInput.classList.add("error"); 
+  }
+
+  if (nombre.length > 0 && edad > 18 && edad < 120) {
+    agregarInvitado(nombre, edad, nacionalidad);
   }
 }
+
 
 var botonBorrar = document.createElement("button")
 botonBorrar.textContent = "Eliminar invitado"
@@ -55,7 +55,7 @@ function agregarInvitado(nombre, edad, nacionalidad) {
 var lista = document.getElementById("lista-de-invitados")
 
 var elementoLista = document.createElement("div")
-elementoLista.classList.added("elemento-lista")
+elementoLista.classList.add("elemento-lista");
 lista.appendChild(elementoLista)
 
 var spanNombre = document.createElement("span")

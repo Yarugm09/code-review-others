@@ -31,10 +31,37 @@
 
   <div>
     <h2>Lista de invitados</h2>
+    h1>Bienvenidos a mi fiesta</h1>
+  <h2>Por favor, confirmar asistencia:</h2>
+
+  <!--Se agrega  form-->
+  <form id="form" class="formulario">
+    Nombre <input type="text" name="name" id="name">
+    <br />
+    Edad <input type="number" name="age" id="age">
+    <br />
+
+    Nacionalidad
+    <select name="nationality" id="nationality">
+      <option value="ar">Argentina</option>
+      <option value="mx">Mexicana</option>
+      <option value="per">Peruana</option>
+      <option value="vnzl">Venezolana</option>
+    </select>
+    <br />
+    <input type="submit">
+  </form>
+
+ <div id="lista-de-invitados">
+  <h2>Lista de invitados</h2>
+</div>
 
   </div>
 
-  <script src="../formulario.js"></script>
+  <script src="formulario.js"></script>
+
+<!--Se corrige ruta de documento js -->
+
 </body>
 
 </html>
